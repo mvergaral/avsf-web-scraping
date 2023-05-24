@@ -1,6 +1,6 @@
 # Guía de comando Bash
 
-```console
+```bash
 # Para revisar los documentos y carpetas dentro de una ubicación, 
 # reemplazar [carpeta] por el directorio a consultar, si se deja vacio se consultara el directorio actual
 
