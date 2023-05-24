@@ -59,12 +59,12 @@ brew install python
 brew install --cask miniconda
 ```
 
-### 7.- Instalar geckodriver
+### 7.- Instalar geckodriver y chromedriver
 
  Es necesario para utilizar webdrivers con Selenium
 
 ```console
-brew install geckodriver
+brew install geckodriver && brew install chromedriver --cask
 ```
 
 ### 8.- Crear el entorno de web scraping
