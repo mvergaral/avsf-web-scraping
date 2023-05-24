@@ -1,6 +1,10 @@
 # Guía de comando Bash
 
 ```bash
+# Para clonar un repositorio de git, reemplazar [repositorio] por la url a clonar
+
+git [repositorio]
+
 # Para revisar los documentos y carpetas dentro de una ubicación, 
 # reemplazar [carpeta] por el directorio a consultar, si se deja vacio se consultara el directorio actual
 
