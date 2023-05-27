@@ -5,6 +5,10 @@ import time
 import csv
 import os
 
+# Cambiar producto y url según corresponda
+product = "carnes"
+url = "https://www.lider.cl/supermercado/category/Carnes_y_Pescados/Todas_las_Carnes/Carnes_Premium"
+
 ############# Functions
 def items_to_csv(items):
     # Process the items as needed
@@ -27,11 +31,6 @@ directory = 'csv_files'
 # Create the directory
 os.makedirs(directory, exist_ok=True)
 
-# Set the product (Cambiar para definir correctamente el archivo csv)
-# ejemplo
-# product = "cervezas"
-product = ""
-
 # Set the filename
 csv_filename = os.path.join(directory, f'lider-{product}.csv')
 
@@ -46,13 +45,6 @@ options.add_argument('--ignore-certificate-errors')
 options.add_argument('--incognito')
 options.add_argument('--headless')
 driver = webdriver.Chrome("/usr/local/bin/chromedriver", options=options)
-
-
-# Set the URL you want to webscrape from (Cambiar para especificar la url de consulta)
-# ejemplo
-# url = "https://www.lider.cl/supermercado/category/Bebidas_y_Licores/Cervezas"
-url = ""
-
 
 # Set initial page and max hits per page
 url = f"{url}?page=1&hitsPerPage=100"
@@ -85,7 +77,7 @@ if total_pages > 1:
         try:
             # Find the next page button
             next_page = driver.find_element_by_css_selector("li.ais-Pagination-item--nextPage")
-            next_page_a = next_page.find_element_by_tag_name('a')
+            next_page_a = next_page.find_element_by_tag_name("a")
             # Click the next page button
             next_page_a.click()
             # Wait for the page to fully render
@@ -103,3 +95,5 @@ if total_pages > 1:
 
 # Close the browser
 driver.quit()
+
+print("Done!")
