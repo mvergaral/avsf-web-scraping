@@ -61,8 +61,10 @@ page = 1
 
 # Close Age modal
 age_modal_yes_button = driver.find_element_by_css_selector("button.getIn")
-if age_modal_yes_button is not None:
+try:
     age_modal_yes_button.click()
+except:
+    pass
 
 # Loop through pages
 while stop:
